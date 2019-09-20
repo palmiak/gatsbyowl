@@ -1,42 +1,47 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import React from "react"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+export default ({ children }) => {
+  const query = useStaticQuery(
+    graphql`
+      query {
+        wordpressWpApiMenusMenusItems (slug: {eq: "header-menu"}) {
+          items {
+            title,
+            url,
+            target,
+            object_slug,
+            type
+          }
+        }
+      }
+    `
+  )
+  
+  return(
+    <header id="header">
+      <Link to="/" class="logo">WordPressówka</Link>
+      <ul role="navigation">
+        {query.wordpressWpApiMenusMenusItems.items.map((node) => {
+          return (
+            <li key={node.object}>
+              {node.type === 'custom' ? (
+              <a href={node.url} target={node.target}>
+                <span>{node.title}</span>
+              </a>
+              ) : (
+              <Link to={node.object_slug} target={node.target}>
+                <span>{node.title}</span>
+              </Link>
+              )
+              }
+            </li>
+          )
+        })}
+      </ul>
+      <div className="buttons">
+        <span className="newsletter-btn" id="gotonewsletter"><span>Zapisz się na</span> Newsletter</span>
+      </div>
+    </header>
+  )
 }
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Header

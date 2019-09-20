@@ -1,21 +1,49 @@
 import React from "react"
-import { Link } from "gatsby"
-
+import { Link, useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+import Pagination from "../components/pagination"
+import Newsletter from "../components/newsletter"
 
-const IndexPage = () => (
+export default ({ data }) => {
+  const posts = data.allWordpressPost.edges[0].node;
+  const date = new Date(posts.date);
+  const fulldate = date.toLocaleString('pl', { month: 'long', day: "2-digit" , year: "numeric" });
+
+  return(
   <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+    <SEO title="Home" />	
+    <div id="right-column">
+      <div role="list" id="content">
+        <article class="article">
+          <time>
+            <strong>{posts.title}</strong>
+            {fulldate}
+          </time>
+          <div dangerouslySetInnerHTML={{__html: posts.content}} />
+          <Link class="comments-btn" to={ posts.slug + "#comments" }>Dołącz do dyskusji</Link>
+        </article>
+      </div>
     </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <Pagination next={posts.next_post} prev={posts.prev_post} />
+    <Newsletter />
   </Layout>
-)
+  )
+}
 
-export default IndexPage
+export const pageQuery = graphql`
+  query {
+    allWordpressPost( limit: 1 ) {
+      edges {
+        node {
+          content,
+          title,
+          date,
+          slug,
+          next_post,
+          prev_post
+        }
+      }
+    }
+  }
+`
