@@ -13,6 +13,8 @@ import Header from "./header"
 import Footer from "./footer"
 import PageTransition from 'gatsby-plugin-page-transitions';
 
+import('../scss/app.scss')
+
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
