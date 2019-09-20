@@ -28,10 +28,6 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <link rel="preload"
-      as="style"
-      href={Sass}
-      crossOrigin="anonymous" />
       <Header siteTitle={data.site.siteMetadata.title} />
       <PageTransition>
       <main role="main" id="wrapper">

@@ -1,4 +1,4 @@
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby"
 import React from "react"
 
 export default (props) => {
@@ -6,13 +6,13 @@ export default (props) => {
         <ul className="pagination">
             <li>
             {props.prev !== null &&
-                <Link to={props.prev}>Nowsze wydanie</Link>
+                <Link to={'/' + props.prev}>Nowsze wydanie</Link>
             }
             </li>
 
             <li>
             {props.next !== null &&
-                <Link to={props.next}>Wcześniejsze wydanie</Link>
+                <Link to={'/' + props.next}>Wcześniejsze wydanie</Link>
             }
             </li>
         </ul>

@@ -35,11 +35,11 @@ export default ({ children }) => {
             return (
                 <li key={node.object}>
                 {node.type === 'custom' ? (
-                <a href={node.url} target={node.target}>
+                <a href={node.url} target={node.target} rel="noopener noreferrer">
                     <span>{node.title}</span>
                 </a>
                 ) : (
-                <Link to={node.object_slug} target={node.target}>
+                <Link to={'/' + node.object_slug} target={node.target}>
                     <span>{node.title}</span>
                 </Link>
                 )
@@ -49,12 +49,12 @@ export default ({ children }) => {
         })}
         </ul>
 
-        <p>WordPressówka {new Date().getFullYear()}. Crafted with <span>&hearts;</span> by <Link to="https://github.com/palmiak" target="_blank">@palmiak</Link> and <Link to="https://github.com/Agressiva86" target="_blank">@agressiva86</Link></p>
+        <p>WordPressówka {new Date().getFullYear()}. Crafted with <span>&hearts;</span> by <a href="https://github.com/palmiak" rel="noopener noreferrer" target="_blank">@palmiak</a> and <a href="https://github.com/Agressiva86" target="_blank" rel="noopener noreferrer">@agressiva86</a></p>
 
         <div className="footer-button">
-            <Link to="http://ko-fi.com/R6R1PWMX" target="_blank" className="button-coffee">
+            <a href="http://ko-fi.com/R6R1PWMX" target="_blank" className="button-coffee" rel="noopener noreferrer">
                 Lubisz WordPressówkę? Kup jej kawę!
-            </Link>
+            </a>
         </div>
     </footer>
     )
