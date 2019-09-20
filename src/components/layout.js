@@ -11,7 +11,6 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import Footer from "./footer"
-import PageTransition from 'gatsby-plugin-page-transitions';
 
 import('../scss/app.scss')
 
@@ -29,11 +28,9 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <PageTransition>
       <main role="main" id="wrapper">
         {children}
       </main>
-      </PageTransition>
       <Footer />
     </>
   )
