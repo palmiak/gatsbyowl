@@ -1,0 +1,40 @@
+/* catamaran-regular - latin_latin-ext */
+@font-face {
+     font-family: 'Catamaran';
+     font-style: normal;
+     font-weight: 400;
+     font-display: swap;
+     src: local('Catamaran Regular'), local('Catamaran-Regular'),
+          url('../fonts/catamaran-v4-latin_latin-ext-regular.woff2') format('woff2'), /* Super Modern Browsers */
+          url('../fonts/catamaran-v4-latin_latin-ext-regular.woff') format('woff');
+   }
+   /* catamaran-700 - latin_latin-ext */
+   @font-face {
+     font-family: 'Catamaran';
+     font-style: normal;
+     font-weight: 700;
+     font-display: swap;
+     src: local('Catamaran Bold'), local('Catamaran-Bold'),
+          url('../fonts/catamaran-v4-latin_latin-ext-700.woff2') format('woff2'), /* Super Modern Browsers */
+          url('../fonts/catamaran-v4-latin_latin-ext-700.woff') format('woff');
+   }
+   /* catamaran-900 - latin_latin-ext */
+   @font-face {
+     font-family: 'Catamaran';
+     font-style: normal;
+     font-weight: 900;
+     font-display: swap;
+     src: local('Catamaran Black'), local('Catamaran-Black'),
+          url('../fonts/catamaran-v4-latin_latin-ext-900.woff2') format('woff2'), /* Super Modern Browsers */
+          url('../fonts/catamaran-v4-latin_latin-ext-900.woff') format('woff');
+   }
+   /* catamaran-800 - latin_latin-ext */
+   @font-face {
+     font-family: 'Catamaran';
+     font-style: normal;
+     font-weight: 800;
+     font-display: swap;
+     src: local('Catamaran ExtraBold'), local('Catamaran-ExtraBold'),
+          url('../fonts/catamaran-v4-latin_latin-ext-800.woff2') format('woff2'), /* Super Modern Browsers */
+          url('../fonts/catamaran-v4-latin_latin-ext-800.woff') format('woff');
+   }

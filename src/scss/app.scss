@@ -1,0 +1,27 @@
+@charset 'utf-8';
+@import url("https://use.typekit.net/qab2jvi.css");
+:root {
+    --primary: #8d41ce;
+    --primary-light: #2d0e50;
+}
+/*
+Brandon Grotesque Bold
+font-family: brandon-grotesque, sans-serif;
+font-weight: 700;
+font-style: normal;
+
+Brandon Grotesque Regular
+font-family: brandon-grotesque, sans-serif;
+font-weight: 400;
+font-style: normal;
+
+font-family: cresta, sans-serif;
+*/
+//@import "components/fonts.scss";
+
+//@import "components/fonts.scss";
+@import "components/reset.scss";
+
+@import "components/variables.scss";
+@import "components/standards.scss";
+@import "components/wordpressowka2.scss";
