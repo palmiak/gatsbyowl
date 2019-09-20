@@ -11,8 +11,9 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import Footer from "./footer"
+import PageTransition from 'gatsby-plugin-page-transitions';
 
-import('../scss/app.scss')
+import Sass from '../scss/app.scss'
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -27,10 +28,16 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <link rel="preload"
+      as="style"
+      href={Sass}
+      crossOrigin="anonymous" />
       <Header siteTitle={data.site.siteMetadata.title} />
+      <PageTransition>
       <main role="main" id="wrapper">
         {children}
       </main>
+      </PageTransition>
       <Footer />
     </>
   )
