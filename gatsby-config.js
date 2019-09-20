@@ -26,10 +26,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-sass`,
-    `gatsby-plugin-postcss`,
-    { 
-      resolve: `gatsby-plugin-purgecss`
-    },
     {
       resolve: "gatsby-source-wordpress",
       options: {
