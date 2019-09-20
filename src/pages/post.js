@@ -31,7 +31,7 @@ export default ({ data }) => {
 }
 
 export const query = graphql`
-    query($id: Int!) {
+    query($id: Int) {
         wordpressPost(wordpress_id: { eq: $id }) {
           content,
           title,
