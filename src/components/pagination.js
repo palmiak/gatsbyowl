@@ -3,7 +3,7 @@ import React from "react"
 
 export default (props) => {
     return(
-        <ul class="pagination">
+        <ul className="pagination">
             <li>
             {props.prev !== null &&
                 <Link to={props.prev}>Nowsze wydanie</Link>

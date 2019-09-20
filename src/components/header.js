@@ -20,7 +20,7 @@ export default ({ children }) => {
   
   return(
     <header id="header">
-      <Link to="/" class="logo">WordPressówka</Link>
+      <Link to="/" className="logo">WordPressówka</Link>
       <ul role="navigation">
         {query.wordpressWpApiMenusMenusItems.items.map((node) => {
           return (

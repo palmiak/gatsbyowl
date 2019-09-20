@@ -15,7 +15,7 @@ export default ({ data }) => {
     <SEO title="Home" />	
     <div id="right-column">
       <div role="list" id="content">
-        <article class="article">
+        <article className="article">
           <time>
             <strong>{posts.title}</strong>
             {fulldate}

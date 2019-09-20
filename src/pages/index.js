@@ -15,13 +15,13 @@ export default ({ data }) => {
     <SEO title="Home" />	
     <div id="right-column">
       <div role="list" id="content">
-        <article class="article">
+        <article className="article">
           <time>
             <strong>{posts.title}</strong>
             {fulldate}
           </time>
           <div dangerouslySetInnerHTML={{__html: posts.content}} />
-          <Link class="comments-btn" to={ posts.slug + "#comments" }>Dołącz do dyskusji</Link>
+          <Link className="comments-btn" to={ posts.slug + "#comments" }>Dołącz do dyskusji</Link>
         </article>
       </div>
     </div>
